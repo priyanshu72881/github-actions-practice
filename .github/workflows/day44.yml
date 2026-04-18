@@ -17,3 +17,13 @@ jobs:
 
       - name: Try printing secret
         run: echo "${{ secrets.MY_SECRET_MESSAGE }}"
+
+     
+      - name: Create file
+        run: echo "Hello DevOps" > report.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-report
+          path: report.txt
